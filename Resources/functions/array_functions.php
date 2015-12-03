@@ -1,7 +1,5 @@
 <?php
 
-require __DIR__.'/../../vendor/autoload.php';
-
 if (!function_exists('array_filter_recursive')) {
 
     function array_filter_recursive($data)
