@@ -1,6 +1,6 @@
 {
   "name": "micayael/php-extras",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "library",
   "description": "Funciones extras sobre el core de php",
   "keywords": ["array_filter", "array_filter_recursive"],
@@ -24,5 +24,6 @@
     "exclude-from-classmap": [
       "/Tests/"
     ]
-  }
+  },
+  "minimum-stability": "dev"
 }
