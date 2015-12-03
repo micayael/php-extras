@@ -1,10 +1,10 @@
 <?php
 
-namespace Micayael\PHPExtras;
+namespace Micayael\PHPExtras\Functions;
 
 class ArrayFunctions
 {
-    static public function ArrayFilterRecursive($array)
+    static public function ArrayFilterRecursive($data)
     {
         foreach ($data as &$value) {
             if (is_array($value)) {
