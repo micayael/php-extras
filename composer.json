@@ -1,0 +1,28 @@
+{
+  "name": "micayael/php-extras",
+  "version": "0.0.1",
+  "type": "library",
+  "description": "Funciones extras sobre el core de php",
+  "keywords": ["array_filter", "array_filter_recursive"],
+  "homepage": "https://github.com/micayael/php-extras",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Juan Ardissone (micayael)",
+      "email": "micayael@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "3.7.*"
+  },
+  "autoload": {
+    "files": [ "Resources/functions/array_functions.php" ],
+    "psr-4": { "Micayael\\PHPExtras\\": "" },
+    "exclude-from-classmap": [
+      "/Tests/"
+    ]
+  }
+}
