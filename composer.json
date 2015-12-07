@@ -1,6 +1,5 @@
 {
   "name": "micayael/php-extras",
-  "version": "1.0.0",
   "type": "library",
   "description": "Funciones extras sobre el core de php",
   "keywords": ["array_filter", "array_filter_recursive"],
