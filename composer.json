@@ -1,6 +1,6 @@
 {
   "name": "micayael/php-extras",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "type": "library",
   "description": "Funciones extras sobre el core de php",
   "keywords": ["array_filter", "array_filter_recursive"],
@@ -17,11 +17,10 @@
   },
   "require-dev": {
     "phpunit/phpunit": "3.7.*",
-    "symfony/var-dumper": "^3.1@dev"
+    "symfony/var-dumper": "^3.0"
   },
   "autoload": {
     "files": [ "Resources/functions/array_functions.php" ],
     "psr-4": { "Micayael\\PHPExtras\\": "" }
-  },
-  "minimum-stability": "dev"
+  }
 }
