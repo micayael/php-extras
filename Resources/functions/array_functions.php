@@ -1,7 +1,6 @@
 <?php
 
 if (!function_exists('array_filter_recursive')) {
-
     function array_filter_recursive($data)
     {
         foreach ($data as &$value) {
@@ -12,5 +11,4 @@ if (!function_exists('array_filter_recursive')) {
 
         return array_filter($data);
     }
-
 }

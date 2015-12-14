@@ -4,7 +4,7 @@ namespace Micayael\PHPExtras\Functions;
 
 class ArrayFunctions
 {
-    static public function ArrayFilterRecursive($data)
+    public static function ArrayFilterRecursive($data)
     {
         foreach ($data as &$value) {
             if (is_array($value)) {

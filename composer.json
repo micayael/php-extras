@@ -16,10 +16,12 @@
   },
   "require-dev": {
     "phpunit/phpunit": "3.7.*",
+    "fabpot/php-cs-fixer": "~1.4",
+    "symfony/phpunit-bridge": "~2.7",
     "symfony/var-dumper": "^3.0"
   },
   "autoload": {
-    "files": [ "Resources/functions/array_functions.php" ],
+    "files": [ "Resources/functions/array_functions.php", "Resources/functions/date_functions.php" ],
     "psr-4": { "Micayael\\PHPExtras\\": "" }
   }
 }
