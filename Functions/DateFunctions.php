@@ -24,6 +24,15 @@ class DateFunctions
         return getNextEndOfMonth($date);
     }
 
+    public static function getNextEndOfMonthQuiet($date = 'now')
+    {
+        try {
+            return getNextEndOfMonth($date);
+        } catch (\InvalidArgumentException $e) {
+            return $date;
+        }
+    }
+
     public static function getNextSaturday()
     {
         return getNextSaturday();
@@ -39,13 +48,40 @@ class DateFunctions
         return getRemainingDays($futureDate);
     }
 
+    public static function getRemainingDaysQuiet($futureDate)
+    {
+        try {
+            return getRemainingDays($futureDate);
+        } catch (\InvalidArgumentException $e) {
+            return $futureDate;
+        }
+    }
+
     public static function isFutureDate($date)
     {
         return isFutureDate($date);
     }
 
+    public static function isFutureDateQuiet($date)
+    {
+        try {
+            return isFutureDate($date);
+        } catch (\InvalidArgumentException $e) {
+            return $date;
+        }
+    }
+
     public static function isPastDate($date)
     {
         return isPastDate($date);
+    }
+
+    public static function isPastDateQuiet($date)
+    {
+        try {
+            return isPastDate($date);
+        } catch (\InvalidArgumentException $e) {
+            return $date;
+        }
     }
 }

@@ -89,6 +89,14 @@ class DateFunctionsTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(DateFunctions::getNextEndOfMonth(), $lastDateCurrentMonth);
     }
 
+    public function testGetNextEndOfMonthQuiet()
+    {
+        $this->assertEquals(DateFunctions::getNextEndOfMonthQuiet(static::NULL_VALUE), static::NULL_VALUE);
+        $this->assertEquals(DateFunctions::getNextEndOfMonthQuiet(static::EMPTY_STRING), static::EMPTY_STRING);
+        $this->assertEquals(DateFunctions::getNextEndOfMonthQuiet(static::SOME_TEXT), static::SOME_TEXT);
+        $this->assertEquals(DateFunctions::getNextEndOfMonthQuiet(static::SOME_NUMBER), static::SOME_NUMBER);
+    }
+
     /**
      * @expectedException \InvalidArgumentException
      */
@@ -130,6 +138,14 @@ class DateFunctionsTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals(DateFunctions::getRemainingDays($this->pastDate1), -1);
         $this->assertEquals(DateFunctions::getRemainingDays($this->pastDate2), -31);
+    }
+
+    public function testGetRemainingDaysQuiet()
+    {
+        $this->assertEquals(DateFunctions::getRemainingDaysQuiet(static::NULL_VALUE), static::NULL_VALUE);
+        $this->assertEquals(DateFunctions::getRemainingDaysQuiet(static::EMPTY_STRING), static::EMPTY_STRING);
+        $this->assertEquals(DateFunctions::getRemainingDaysQuiet(static::SOME_TEXT), static::SOME_TEXT);
+        $this->assertEquals(DateFunctions::getRemainingDaysQuiet(static::SOME_NUMBER), static::SOME_NUMBER);
     }
 
     /**
@@ -175,6 +191,14 @@ class DateFunctionsTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(DateFunctions::isFutureDate($this->pastDate2));
     }
 
+    public function testIsFutureDateQuiet()
+    {
+        $this->assertEquals(DateFunctions::isFutureDateQuiet(static::NULL_VALUE), static::NULL_VALUE);
+        $this->assertEquals(DateFunctions::isFutureDateQuiet(static::EMPTY_STRING), static::EMPTY_STRING);
+        $this->assertEquals(DateFunctions::isFutureDateQuiet(static::SOME_TEXT), static::SOME_TEXT);
+        $this->assertEquals(DateFunctions::isFutureDateQuiet(static::SOME_NUMBER), static::SOME_NUMBER);
+    }
+
     /**
      * @expectedException \InvalidArgumentException
      */
@@ -216,6 +240,14 @@ class DateFunctionsTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(DateFunctions::isPastDate($this->now));
         $this->assertFalse(DateFunctions::isPastDate($this->futureDate1));
         $this->assertFalse(DateFunctions::isPastDate($this->futureDate2));
+    }
+
+    public function testIsPastDateQuiet()
+    {
+        $this->assertEquals(DateFunctions::isPastDateQuiet(static::NULL_VALUE), static::NULL_VALUE);
+        $this->assertEquals(DateFunctions::isPastDateQuiet(static::EMPTY_STRING), static::EMPTY_STRING);
+        $this->assertEquals(DateFunctions::isPastDateQuiet(static::SOME_TEXT), static::SOME_TEXT);
+        $this->assertEquals(DateFunctions::isPastDateQuiet(static::SOME_NUMBER), static::SOME_NUMBER);
     }
 
     /**
