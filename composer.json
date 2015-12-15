@@ -24,7 +24,8 @@
     "files": [
       "Resources/functions/array_functions.php",
       "Resources/functions/date_functions.php",
-      "Resources/functions/string_functions.php"
+      "Resources/functions/string_functions.php",
+      "Resources/functions/html_functions.php"
     ],
     "psr-4": { "Micayael\\PHPExtras\\": "" }
   }

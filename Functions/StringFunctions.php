@@ -23,4 +23,18 @@ class StringFunctions
     {
         return sanitizeFilename($filename);
     }
+
+    public static function hideEmail($email)
+    {
+        return hideEmail($email);
+    }
+
+    public static function hideEmailQuiet($email)
+    {
+        try {
+            return hideEmail($email);
+        } catch (\InvalidArgumentException $e) {
+            return $email;
+        }
+    }
 }

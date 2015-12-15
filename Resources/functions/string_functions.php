@@ -105,3 +105,22 @@ if (!function_exists('sanitizeFilename')) {
         return trim(preg_replace('/[^a-zA-Z0-9.]/', '-', $filename));
     }
 }
+
+if (!function_exists('hideEmail')) {
+    function hideEmail($email)
+    {
+        if (!(filter_var($email, FILTER_VALIDATE_EMAIL))) {
+            throw new \InvalidArgumentException(
+                sprintf('$email argument [%s] does not match correct format', $email)
+            );
+        }
+
+        $length = strlen($email);
+        $scrambled = '';
+        for ($i = 0; $i < $length; ++$i) {
+            $scrambled .= '&#'.ord(substr($email, $i, 1)).';';
+        }
+
+        return $scrambled;
+    }
+}

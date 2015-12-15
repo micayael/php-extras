@@ -45,4 +45,28 @@ class StringFunctionsTest extends \PHPUnit_Framework_TestCase
             "original: $string"
         );
     }
+
+    public function testHideEmail()
+    {
+        $this->assertEquals(
+            StringFunctions::hideEmail('micayael@gmail.com'),
+            '&#109;&#105;&#99;&#97;&#121;&#97;&#101;&#108;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;'
+        );
+    }
+
+    public function testHideEmailQuiet()
+    {
+        $this->assertEquals(
+            StringFunctions::hideEmailQuiet('this is not an email'),
+            'this is not an email'
+        );
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testHideEmailException()
+    {
+        $this->assertTrue(StringFunctions::hideEmail('this is not an email'));
+    }
 }
