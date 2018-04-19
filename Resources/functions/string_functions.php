@@ -142,3 +142,33 @@ if (!function_exists('stringFormat')) {
         }, $str);
     }
 }
+
+if (!function_exists('formatUrl')) {
+    /**
+     * Agrega los parámetros a una url. Los parámetros pueden ser de tipo path o query params.
+     *
+     * @param $url string
+     * @param array $pathParams  Parámetros
+     * @param array $queryParams
+     *
+     * @return string
+     */
+    function formatUrl($url, array $pathParams = array(), array $queryParams = array())
+    {
+        if ($pathParams) {
+            $url = stringFormat($url, $pathParams);
+        }
+
+        if ($queryParams) {
+            $delimiter = '?';
+
+            foreach ($queryParams as $param => $value) {
+                $url .= $delimiter.$param.'='.$value;
+
+                $delimiter = '&';
+            }
+        }
+
+        return $url;
+    }
+}

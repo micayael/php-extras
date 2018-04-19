@@ -81,4 +81,21 @@ class StringFunctionsTest extends TestCase
             'Hello John, this is "Admin Guy"'
         );
     }
+
+    public function testFormatUrl()
+    {
+        $this->assertEquals(
+            StringFunctions::formatUrl(
+                '/api/documentos/{slug}/clausulas/{identificador}.json',
+                array(
+                    'slug' => 'este-es-el-slug',
+                    'identificador' => 1,
+                ),
+                array(
+                    'id' => 1,
+                    'lang' => 'es',
+                )),
+            '/api/documentos/este-es-el-slug/clausulas/1.json?id=1&lang=es'
+        );
+    }
 }

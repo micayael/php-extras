@@ -31,6 +31,7 @@ micayael/php-extras
 - sanitizeFilename: StringFunctions::sanitizeFilename
 - hideEmail: StringFunctions::hideEmail, StringFunctions::hideEmailQuiet
 - stringFormat: StringFunctions::stringFormat
+- formatUrl: StringFunctions::formatUrl
 
 
 Unit Tests

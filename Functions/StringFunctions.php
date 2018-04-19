@@ -42,4 +42,9 @@ class StringFunctions
     {
         return stringFormat($str, $data);
     }
+
+    public static function formatUrl($url, array $pathParams = array(), array $queryParams = array())
+    {
+        return formatUrl($url, $pathParams, $queryParams);
+    }
 }
