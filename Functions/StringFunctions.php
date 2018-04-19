@@ -37,4 +37,9 @@ class StringFunctions
             return $email;
         }
     }
+
+    public static function stringFormat($str, array $data)
+    {
+        return stringFormat($str, $data);
+    }
 }
