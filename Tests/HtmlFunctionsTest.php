@@ -4,11 +4,12 @@ namespace Micayael\PHPExtras\Tests;
 
 use Micayael\PHPExtras\Functions\HtmlFunctions;
 use Micayael\PHPExtras\Functions\StringFunctions;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author Juan Ardissone (micayael) <micayael@gmail.com>
  */
-class HtmlFunctionsTest extends \PHPUnit_Framework_TestCase
+class HtmlFunctionsTest extends TestCase
 {
     public function testCreateTable()
     {

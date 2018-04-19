@@ -3,11 +3,12 @@
 namespace Micayael\PHPExtras\Tests;
 
 use Micayael\PHPExtras\Functions\DateFunctions;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author Juan Ardissone (micayael) <micayael@gmail.com>
  */
-class DateFunctionsTest extends \PHPUnit_Framework_TestCase
+class DateFunctionsTest extends TestCase
 {
     const NULL_VALUE = null;
     const EMPTY_STRING = '';

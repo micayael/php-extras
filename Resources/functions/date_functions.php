@@ -11,7 +11,7 @@ define('DATETIME_FORMAT', 'Y-m-d H:i:s');
 if (!function_exists('getSanitizedDate')) {
     function getSanitizedDate($date)
     {
-        $date = $date === 'now' ? date(DATE_FORMAT) : $date;
+        $date = 'now' === $date ? date(DATE_FORMAT) : $date;
 
         if (!preg_match(DATE_REGEX, $date, $matches)) {
             return false;
@@ -24,7 +24,7 @@ if (!function_exists('getSanitizedDate')) {
 if (!function_exists('getSanitizedTime')) {
     function getSanitizedTime($date)
     {
-        $date = $date === 'now' ? date(TIME_FORMAT) : $date;
+        $date = 'now' === $date ? date(TIME_FORMAT) : $date;
 
         if (!preg_match(TIME_REGEX, $date, $matches)) {
             return false;
@@ -37,7 +37,7 @@ if (!function_exists('getSanitizedTime')) {
 if (!function_exists('getSanitizedDateTime')) {
     function getSanitizedDateTime($date)
     {
-        $date = $date === 'now' ? date(DATETIME_FORMAT) : $date;
+        $date = 'now' === $date ? date(DATETIME_FORMAT) : $date;
 
         if (!preg_match(DATETIME_REGEX, $date, $matches)) {
             return false;

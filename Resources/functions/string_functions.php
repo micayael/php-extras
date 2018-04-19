@@ -128,15 +128,17 @@ if (!function_exists('hideEmail')) {
 if (!function_exists('stringFormat')) {
     /**
      * Permite realizar un formateo de textos como un sprintf pero utilizando
-     * keys {slug} o propiedades de un array asociativo {person.name}
+     * keys {slug} o propiedades de un array asociativo {person.name}.
      *
      * @param $str string El string a formatear
      * @param $data array Datos a reemplazar
+     *
      * @return string
      */
-    function stringFormat($str, array $data) {
-        return preg_replace_callback('#{(\w+?)(\.(\w+?))?}#', function($m) use ($data){
-            return count($m) === 2 ? $data[$m[1]] : $data[$m[1]][$m[3]];
+    function stringFormat($str, array $data)
+    {
+        return preg_replace_callback('#{(\w+?)(\.(\w+?))?}#', function ($m) use ($data) {
+            return 2 === count($m) ? $data[$m[1]] : $data[$m[1]][$m[3]];
         }, $str);
     }
 }

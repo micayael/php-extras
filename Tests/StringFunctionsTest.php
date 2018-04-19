@@ -3,11 +3,12 @@
 namespace Micayael\PHPExtras\Tests;
 
 use Micayael\PHPExtras\Functions\StringFunctions;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author Juan Ardissone (micayael) <micayael@gmail.com>
  */
-class StringFunctionsTest extends \PHPUnit_Framework_TestCase
+class StringFunctionsTest extends TestCase
 {
     public function testHighlightFormatter()
     {
@@ -68,5 +69,16 @@ class StringFunctionsTest extends \PHPUnit_Framework_TestCase
     public function testHideEmailException()
     {
         $this->assertTrue(StringFunctions::hideEmail('this is not an email'));
+    }
+
+    public function testStringFormat()
+    {
+        $this->assertEquals(
+            StringFunctions::stringFormat('Hello {name}, this is "{admin.name}"', array(
+                'name' => 'John',
+                'admin' => array('name' => 'Admin Guy'),
+            )),
+            'Hello John, this is "Admin Guy"'
+        );
     }
 }

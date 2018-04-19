@@ -3,11 +3,12 @@
 namespace Micayael\PHPExtras\Tests;
 
 use Micayael\PHPExtras\Functions\ArrayFunctions;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @author Juan Ardissone (micayael) <micayael@gmail.com>
  */
-class ArrayFilterRecursiveTest extends \PHPUnit_Framework_TestCase
+class ArrayFilterRecursiveTest extends TestCase
 {
     public function testArrayEnumerado()
     {
@@ -142,7 +143,6 @@ class ArrayFilterRecursiveTest extends \PHPUnit_Framework_TestCase
                     'k2' => -1,
                 ),
             ),
-
         );
 
         $this->assertEquals($data, $expectedData);

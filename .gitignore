@@ -39,3 +39,5 @@
 .idea/*
 .sonar/*
 .rules/*
+.php_cs.cache
+.php_cs
