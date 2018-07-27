@@ -10,24 +10,43 @@ use PHPUnit\Framework\TestCase;
  */
 class StringFunctionsTest extends TestCase
 {
-    public function testHighlightFormatter()
+    /**
+     * @dataProvider getHighlightFormatterTests
+     */
+    public function testHighlightFormatter($originalText, $highlightText, $expectedText, $highlightClass = 'highlight')
     {
         $this->assertEquals(
+            $expectedText,
             StringFunctions::highlight(
-                'CONSULTORIA DE APOYO PARA EL FORTALECIMIENTO DE LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION de LOS REGLAMENTOS De CALIDAD dE LA PRESTACION DEL SERVICIO Y DE INF. DEL NIVEL DE CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR. CONSULTORIA DE APOYO PARA EL FORTALECIMIENTO DE LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION de LOS REGLAMENTOS DE CALIDAD DE la PRESTACION DEL SERVICIO Y DE INF. DEL NIVEL DE CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR.',
-                'de'
-            ),
-            'CONSULTORIA <span class="highlight">DE</span> APOYO PARA EL FORTALECIMIENTO <span class="highlight">DE</span> LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION <span class="highlight">de</span> LOS REGLAMENTOS <span class="highlight">De</span> CALIDAD <span class="highlight">dE</span> LA PRESTACION DEL SERVICIO Y <span class="highlight">DE</span> INF. DEL NIVEL <span class="highlight">DE</span> CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR. CONSULTORIA <span class="highlight">DE</span> APOYO PARA EL FORTALECIMIENTO <span class="highlight">DE</span> LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION <span class="highlight">de</span> LOS REGLAMENTOS <span class="highlight">DE</span> CALIDAD <span class="highlight">DE</span> la PRESTACION DEL SERVICIO Y <span class="highlight">DE</span> INF. DEL NIVEL <span class="highlight">DE</span> CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR.'
-        );
-
-        $this->assertEquals(
-            StringFunctions::highlight(
-                'CONSULTORIA DE APOYO PARA EL FORTALECIMIENTO DE LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION de LOS REGLAMENTOS De CALIDAD dE LA PRESTACION DEL SERVICIO Y DE INF. DEL NIVEL DE CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR. CONSULTORIA DE APOYO PARA EL FORTALECIMIENTO DE LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION de LOS REGLAMENTOS DE CALIDAD DE la PRESTACION DEL SERVICIO Y DE INF. DEL NIVEL DE CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR.',
-                array('de', 'consultoria')
-            ),
-            '<span class="highlight">CONSULTORIA</span> <span class="highlight">DE</span> APOYO PARA EL FORTALECIMIENTO <span class="highlight">DE</span> LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION <span class="highlight">de</span> LOS REGLAMENTOS <span class="highlight">De</span> CALIDAD <span class="highlight">dE</span> LA PRESTACION DEL SERVICIO Y <span class="highlight">DE</span> INF. DEL NIVEL <span class="highlight">DE</span> CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR. <span class="highlight">CONSULTORIA</span> <span class="highlight">DE</span> APOYO PARA EL FORTALECIMIENTO <span class="highlight">DE</span> LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION <span class="highlight">de</span> LOS REGLAMENTOS <span class="highlight">DE</span> CALIDAD <span class="highlight">DE</span> la PRESTACION DEL SERVICIO Y <span class="highlight">DE</span> INF. DEL NIVEL <span class="highlight">DE</span> CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR.'
+                $originalText,
+                $highlightText,
+                $highlightClass
+            )
         );
     }
+
+    public function getHighlightFormatterTests()
+    {
+        return array(
+            array(
+                'CONSULTORIA DE APOYO PARA EL FORTALECIMIENTO DE LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION de LOS REGLAMENTOS De CALIDAD dE LA PRESTACION DEL SERVICIO Y DE INF. DEL NIVEL DE CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR. CONSULTORIA DE APOYO PARA EL FORTALECIMIENTO DE LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION de LOS REGLAMENTOS DE CALIDAD DE la PRESTACION DEL SERVICIO Y DE INF. DEL NIVEL DE CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR.',
+                'de',
+                'CONSULTORIA <span class="highlight">DE</span> APOYO PARA EL FORTALECIMIENTO <span class="highlight">DE</span> LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION <span class="highlight">de</span> LOS REGLAMENTOS <span class="highlight">De</span> CALIDAD <span class="highlight">dE</span> LA PRESTACION DEL SERVICIO Y <span class="highlight">DE</span> INF. DEL NIVEL <span class="highlight">DE</span> CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR. CONSULTORIA <span class="highlight">DE</span> APOYO PARA EL FORTALECIMIENTO <span class="highlight">DE</span> LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION <span class="highlight">de</span> LOS REGLAMENTOS <span class="highlight">DE</span> CALIDAD <span class="highlight">DE</span> la PRESTACION DEL SERVICIO Y <span class="highlight">DE</span> INF. DEL NIVEL <span class="highlight">DE</span> CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR.',
+            ),
+            array(
+                'CONSULTORIA DE APOYO PARA EL FORTALECIMIENTO DE LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION de LOS REGLAMENTOS De CALIDAD dE LA PRESTACION DEL SERVICIO Y DE INF. DEL NIVEL DE CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR. CONSULTORIA DE APOYO PARA EL FORTALECIMIENTO DE LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION de LOS REGLAMENTOS DE CALIDAD DE la PRESTACION DEL SERVICIO Y DE INF. DEL NIVEL DE CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR.',
+                array('de', 'consultoria'),
+                '<span class="highlight">CONSULTORIA</span> <span class="highlight">DE</span> APOYO PARA EL FORTALECIMIENTO <span class="highlight">DE</span> LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION <span class="highlight">de</span> LOS REGLAMENTOS <span class="highlight">De</span> CALIDAD <span class="highlight">dE</span> LA PRESTACION DEL SERVICIO Y <span class="highlight">DE</span> INF. DEL NIVEL <span class="highlight">DE</span> CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR. <span class="highlight">CONSULTORIA</span> <span class="highlight">DE</span> APOYO PARA EL FORTALECIMIENTO <span class="highlight">DE</span> LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION <span class="highlight">de</span> LOS REGLAMENTOS <span class="highlight">DE</span> CALIDAD <span class="highlight">DE</span> la PRESTACION DEL SERVICIO Y <span class="highlight">DE</span> INF. DEL NIVEL <span class="highlight">DE</span> CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR.',
+            ),
+            array(
+                'CONSULTORIA DE APOYO PARA EL FORTALECIMIENTO DE LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION de LOS REGLAMENTOS De CALIDAD dE LA PRESTACION DEL SERVICIO Y DE INF. DEL NIVEL DE CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR. CONSULTORIA DE APOYO PARA EL FORTALECIMIENTO DE LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION de LOS REGLAMENTOS DE CALIDAD DE la PRESTACION DEL SERVICIO Y DE INF. DEL NIVEL DE CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR.',
+                array('de', 'consultoria'),
+                '<span class="hl">CONSULTORIA</span> <span class="hl">DE</span> APOYO PARA EL FORTALECIMIENTO <span class="hl">DE</span> LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION <span class="hl">de</span> LOS REGLAMENTOS <span class="hl">De</span> CALIDAD <span class="hl">dE</span> LA PRESTACION DEL SERVICIO Y <span class="hl">DE</span> INF. DEL NIVEL <span class="hl">DE</span> CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR. <span class="hl">CONSULTORIA</span> <span class="hl">DE</span> APOYO PARA EL FORTALECIMIENTO <span class="hl">DE</span> LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION <span class="hl">de</span> LOS REGLAMENTOS <span class="hl">DE</span> CALIDAD <span class="hl">DE</span> la PRESTACION DEL SERVICIO Y <span class="hl">DE</span> INF. DEL NIVEL <span class="hl">DE</span> CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR.',
+                'hl'
+            ),
+        );
+    }
+
 
     public function testSlugify()
     {
@@ -75,9 +94,10 @@ class StringFunctionsTest extends TestCase
     {
         $this->assertEquals(
             StringFunctions::stringFormat('Hello {name}, this is "{admin.name}"', array(
-                'name' => 'John',
-                'admin' => array('name' => 'Admin Guy'),
-            )),
+                    'name' => 'John',
+                    'admin' => array('name' => 'Admin Guy'),
+                )
+            ),
             'Hello John, this is "Admin Guy"'
         );
     }
@@ -94,7 +114,8 @@ class StringFunctionsTest extends TestCase
                 array(
                     'id' => 1,
                     'lang' => 'es',
-                )),
+                )
+            ),
             '/api/documentos/este-es-el-slug/clausulas/1.json?id=1&lang=es'
         );
     }
