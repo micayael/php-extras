@@ -3,8 +3,15 @@
   "type": "library",
   "description": "Funciones extras sobre el core de php",
   "keywords": [
-    "array_filter",
-    "array_filter_recursive"
+    "array filter recursive",
+    "sanitize date",
+    "remaining days",
+    "create table",
+    "nl2p",
+    "highlight",
+    "lipsum",
+    "hide email",
+    "format url"
   ],
   "homepage": "https://github.com/micayael/php-extras",
   "license": "MIT",
