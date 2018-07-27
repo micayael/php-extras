@@ -1,6 +1,6 @@
 <?php
 
-namespace Micayael\PHPExtras\Tests;
+namespace Micayael\PHPExtras\Tests\Functions;
 
 use Micayael\PHPExtras\Functions\HtmlFunctions;
 use Micayael\PHPExtras\Functions\StringFunctions;

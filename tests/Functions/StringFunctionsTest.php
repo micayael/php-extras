@@ -1,6 +1,6 @@
 <?php
 
-namespace Micayael\PHPExtras\Tests;
+namespace Micayael\PHPExtras\Tests\Functions;
 
 use Micayael\PHPExtras\Functions\StringFunctions;
 use PHPUnit\Framework\TestCase;
@@ -42,11 +42,10 @@ class StringFunctionsTest extends TestCase
                 'CONSULTORIA DE APOYO PARA EL FORTALECIMIENTO DE LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION de LOS REGLAMENTOS De CALIDAD dE LA PRESTACION DEL SERVICIO Y DE INF. DEL NIVEL DE CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR. CONSULTORIA DE APOYO PARA EL FORTALECIMIENTO DE LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION de LOS REGLAMENTOS DE CALIDAD DE la PRESTACION DEL SERVICIO Y DE INF. DEL NIVEL DE CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR.',
                 array('de', 'consultoria'),
                 '<span class="hl">CONSULTORIA</span> <span class="hl">DE</span> APOYO PARA EL FORTALECIMIENTO <span class="hl">DE</span> LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION <span class="hl">de</span> LOS REGLAMENTOS <span class="hl">De</span> CALIDAD <span class="hl">dE</span> LA PRESTACION DEL SERVICIO Y <span class="hl">DE</span> INF. DEL NIVEL <span class="hl">DE</span> CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR. <span class="hl">CONSULTORIA</span> <span class="hl">DE</span> APOYO PARA EL FORTALECIMIENTO <span class="hl">DE</span> LA DEPSAN, EN LOS SIGUIENTES ESTUDIOS: ADECUANCION <span class="hl">de</span> LOS REGLAMENTOS <span class="hl">DE</span> CALIDAD <span class="hl">DE</span> la PRESTACION DEL SERVICIO Y <span class="hl">DE</span> INF. DEL NIVEL <span class="hl">DE</span> CONTROLES PARA LOS PERMISIONARIOS DEL SECTOR.',
-                'hl'
+                'hl',
             ),
         );
     }
-
 
     public function testSlugify()
     {

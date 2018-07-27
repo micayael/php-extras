@@ -1,6 +1,6 @@
 <?php
 
-namespace Micayael\PHPExtras\Tests;
+namespace Micayael\PHPExtras\Tests\Functions;
 
 use Micayael\PHPExtras\Functions\ArrayFunctions;
 use PHPUnit\Framework\TestCase;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Micayael\PHPExtras\Tests;
+namespace Micayael\PHPExtras\Tests\Functions;
 
 use Micayael\PHPExtras\Functions\DateFunctions;
 use PHPUnit\Framework\TestCase;

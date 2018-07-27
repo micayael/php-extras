@@ -2,6 +2,7 @@ micayael/php-extras
 ===================
 
 [![Build Status](https://travis-ci.org/micayael/php-extras.svg?branch=master)](https://travis-ci.org/micayael/php-extras)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/symfony/symfony.svg)](https://packagist.org/packages/micayael/php-extras)
 
 ### Array Functions and Static Methods
 
