@@ -1,6 +1,8 @@
 micayael/php-extras
 ===================
 
+[![Build Status](https://travis-ci.org/micayael/php-extras.svg?branch=master)](https://travis-ci.org/micayael/php-extras)
+
 ### Array Functions and Static Methods
 
 - array_filter_recursive: ArrayFunctions::ArrayFilterRecursive
