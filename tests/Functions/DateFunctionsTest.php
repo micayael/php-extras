@@ -11,14 +11,21 @@ use PHPUnit\Framework\TestCase;
 class DateFunctionsTest extends TestCase
 {
     const NULL_VALUE = null;
+
     const EMPTY_STRING = '';
+
     const SOME_TEXT = 'some text';
+
     const SOME_NUMBER = 123;
 
     private $now;
+
     private $pastDate1;
+
     private $pastDate2;
+
     private $futureDate1;
+
     private $futureDate2;
 
     protected function setUp()
