@@ -2,7 +2,7 @@ micayael/php-extras
 ===================
 
 [![Build Status](https://travis-ci.org/micayael/php-extras.svg?branch=master)](https://travis-ci.org/micayael/php-extras)
-![PHP Version](https://img.shields.io/packagist/php-v/symfony/symfony.svg)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/micayael/php-extras.svg)](https://packagist.org/packages/micayael/php-extras)
 [![Downloads](https://img.shields.io/packagist/dt/micayael/php-extras.svg)](https://packagist.org/packages/micayael/php-extras)
 ![License](https://img.shields.io/packagist/l/micayael/php-extras.svg)
 [![Packagist](https://img.shields.io/packagist/v/micayael/php-extras.svg)](https://packagist.org/packages/micayael/php-extras)

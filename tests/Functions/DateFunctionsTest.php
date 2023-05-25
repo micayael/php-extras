@@ -21,7 +21,7 @@ class DateFunctionsTest extends TestCase
     private $futureDate1;
     private $futureDate2;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->now = date('Y-m-d');
 
